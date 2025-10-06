@@ -29,9 +29,9 @@ app.post('/juro_simples', (req, res) => {
     const capital = req.body.capital;
     const taxa = req.body.taxa;
     const tempo = req.body.tempo;
-    const juro_simples = (capital * taxa * tempo) / 100;
-    const total = capital + juro_simples;
-    res.render('juro_simples', { capital, taxa, tempo, juro_simples, total });
+    const juros = (capital * taxa * tempo) / 100;
+    const total = capital + juros;
+    res.render('juro_simples', { capital, taxa, tempo, juros, total });
 });
 
 const port = process.env.PORT || 3000;
