@@ -25,6 +25,10 @@ app.get('/juro_simples', (req, res) => {
     res.render('juro_simples');
 });
 
+app.get('/juro_composto', (req, res) => {
+    res.render('juro_composto');
+});
+
 app.post('/juro_simples', (req, res) => {
     const capital = req.body.capital;
     const taxa = req.body.taxa;
@@ -32,6 +36,15 @@ app.post('/juro_simples', (req, res) => {
     const juros = (capital * taxa * tempo) / 100;
     const total = capital + juros;
     res.render('juro_simples', { capital, taxa, tempo, juros, total });
+});
+
+app.post('/juro_composto', (req, res) => {
+    const capital = req.body.capital;
+    const taxa = Number(req.body.taxa) / 100;
+    const tempo = req.body.tempo;
+    const total = capital * (taxa /100) * (1 + taxa) ** tempo;
+    const juros = total - capital;
+    res.render('juro_composto', { capital, taxa, tempo,juros, total });
 });
 
 const port = process.env.PORT || 3000;
