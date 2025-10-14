@@ -1,0 +1,36 @@
+<h1 class="titulo">juro composto</h1>
+
+<form action="/juro_composto" method="post">
+    <label for="capital">capital inicial (p):</label>
+    <input type="number" name="capital" id="capital" placeholder="ex.: 1000" required>
+
+    <label for="taxa">taxa de juros (t):</label>
+    <input type="number"  name="taxa" id="taxa" placeholder="ex.: 5" required>
+
+    <label for="tempo">tempo (n):</label>
+    <input type="number"  name="tempo" id="tempo" placeholder="ex.: 12" required>
+
+    <button type="submit">calcular</button>
+</form>
+
+
+<% if (typeof total !== 'undefined'){ %>
+    <div class="resultado">
+        <h2>resultado:</h2>
+        <p>capital: R$ <%= capital %></p>
+        <p>taxa: <%= taxa %> %am</p>
+        <p>tempo: <%= tempo %> meses</p>
+        <p>juro_composto: R$ <%= juros %></p>
+        <p>montante: R$ <%= total %></p>
+    </div>
+<% } %>
+
+
+
+
+
+
+
+
+
+
