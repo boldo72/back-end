@@ -1,0 +1,18 @@
+{
+    "nome": "breibos",
+    "idade": 20,
+    "turma": {
+        "nome_turma": "2° b",
+        "ano": 2025
+    },
+    "notas": [
+        {
+            "disciplina": "matematica",
+            "nota": 10
+        },
+        {
+            "disciplina": "portugues",
+            "nota": 9
+        }
+    ]
+}
